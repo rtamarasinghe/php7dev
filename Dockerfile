@@ -16,6 +16,4 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-
   poppler-utils \
   unzip \
   zip \
-  && yes "" | pecl install channel://pecl.php.net/APCu-4.0.11 \
-  && docker-php-ext-enable apcu \
-  && rm -rf /var/lib/apt/lists/*
+  && yes "" 
