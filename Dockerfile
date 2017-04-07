@@ -25,7 +25,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-
     libmcrypt-dev \
     libpng12-dev \
     zlib1g-dev \
-  && pecl channel-update pecl.php.net
+  && pecl channel-update pecl.php.net \
   && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
   && docker-php-ext-configure gd --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu --with-freetype-dir=/usr/lib/x86_64-linux-gnu \
   && docker-php-ext-install \
@@ -40,7 +40,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-
      pdo_mysql \
      opcache \
      soap \
-     zip
+     zip \
   && pecl install stats-2.0.3 \
   && docker-php-ext-enable stats \
   && yes "" | pecl install apcu \
